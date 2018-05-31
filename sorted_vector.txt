@@ -1,0 +1,52 @@
+------------------------------------------------------------------
+Benchmark                           Time           CPU Iterations
+------------------------------------------------------------------
+[0;32mBM_UnorderedMapInsert/16   [m[0;33m      6504 ns       6510 ns [m[0;36m    100356[m
+[m[0;32mBM_UnorderedMapInsert/32   [m[0;33m      9685 ns       9703 ns [m[0;36m     69811[m
+[m[0;32mBM_UnorderedMapInsert/64   [m[0;33m     15417 ns      15441 ns [m[0;36m     47342[m
+[m[0;32mBM_UnorderedMapInsert/128  [m[0;33m     25560 ns      25614 ns [m[0;36m     26503[m
+[m[0;32mBM_UnorderedMapInsert/256  [m[0;33m     47255 ns      47303 ns [m[0;36m     14311[m
+[m[0;32mBM_UnorderedMapInsert/512  [m[0;33m     89402 ns      89486 ns [m[0;36m      7338[m
+[m[0;32mBM_UnorderedMapInsert/1024 [m[0;33m    174156 ns     174358 ns [m[0;36m      3552[m
+[m[0;32mBM_UnorderedMapInsert/2048 [m[0;33m    374384 ns     374038 ns [m[0;36m      2146[m
+[m[0;32mBM_SortedVectorInsert/16   [m[0;33m      4821 ns       4812 ns [m[0;36m    150945[m
+[m[0;32mBM_SortedVectorInsert/32   [m[0;33m      5547 ns       5555 ns [m[0;36m    130022[m
+[m[0;32mBM_SortedVectorInsert/64   [m[0;33m      6832 ns       6868 ns [m[0;36m    101488[m
+[m[0;32mBM_SortedVectorInsert/128  [m[0;33m      9859 ns       9880 ns [m[0;36m     68121[m
+[m[0;32mBM_SortedVectorInsert/256  [m[0;33m     15611 ns      15692 ns [m[0;36m     42822[m
+[m[0;32mBM_SortedVectorInsert/512  [m[0;33m     31301 ns      31342 ns [m[0;36m     22698[m
+[m[0;32mBM_SortedVectorInsert/1024 [m[0;33m     61542 ns      61474 ns [m[0;36m     11742[m
+[m[0;32mBM_SortedVectorInsert/2048 [m[0;33m    124383 ns     124394 ns [m[0;36m      5158[m
+[m[0;32mBM_UnorderedMapDelete/16   [m[0;33m      4866 ns       4859 ns [m[0;36m    150263[m
+[m[0;32mBM_UnorderedMapDelete/32   [m[0;33m      6382 ns       6373 ns [m[0;36m    109273[m
+[m[0;32mBM_UnorderedMapDelete/64   [m[0;33m      9660 ns       9628 ns [m[0;36m     71765[m
+[m[0;32mBM_UnorderedMapDelete/128  [m[0;33m     16828 ns      16739 ns [m[0;36m     40360[m
+[m[0;32mBM_UnorderedMapDelete/256  [m[0;33m     28452 ns      28374 ns [m[0;36m     24552[m
+[m[0;32mBM_UnorderedMapDelete/512  [m[0;33m     55179 ns      55029 ns [m[0;36m     12113[m
+[m[0;32mBM_UnorderedMapDelete/1024 [m[0;33m    103611 ns     103363 ns [m[0;36m      6609[m
+[m[0;32mBM_UnorderedMapDelete/2048 [m[0;33m    210965 ns     210759 ns [m[0;36m      3343[m
+[m[0;32mBM_SortedVectorDelete/16   [m[0;33m      3337 ns       3325 ns [m[0;36m    206272[m
+[m[0;32mBM_SortedVectorDelete/32   [m[0;33m      3532 ns       3505 ns [m[0;36m    195442[m
+[m[0;32mBM_SortedVectorDelete/64   [m[0;33m      4192 ns       4133 ns [m[0;36m    165687[m
+[m[0;32mBM_SortedVectorDelete/128  [m[0;33m      5573 ns       5483 ns [m[0;36m    133476[m
+[m[0;32mBM_SortedVectorDelete/256  [m[0;33m     10795 ns      10669 ns [m[0;36m     64529[m
+[m[0;32mBM_SortedVectorDelete/512  [m[0;33m     31671 ns      31308 ns [m[0;36m     22765[m
+[m[0;32mBM_SortedVectorDelete/1024 [m[0;33m     68748 ns      68339 ns [m[0;36m     10779[m
+[m[0;32mBM_SortedVectorDelete/2048 [m[0;33m    132967 ns     132255 ns [m[0;36m      5191[m
+[m[0;32mBM_UnorderedMapLookup/16   [m[0;33m      4800 ns       4781 ns [m[0;36m    149480[m
+[m[0;32mBM_UnorderedMapLookup/32   [m[0;33m      6195 ns       6176 ns [m[0;36m    106735[m
+[m[0;32mBM_UnorderedMapLookup/64   [m[0;33m      9169 ns       9114 ns [m[0;36m     75283[m
+[m[0;32mBM_UnorderedMapLookup/128  [m[0;33m     14404 ns      14307 ns [m[0;36m     48386[m
+[m[0;32mBM_UnorderedMapLookup/256  [m[0;33m     25851 ns      25740 ns [m[0;36m     27456[m
+[m[0;32mBM_UnorderedMapLookup/512  [m[0;33m     45365 ns      45117 ns [m[0;36m     14967[m
+[m[0;32mBM_UnorderedMapLookup/1024 [m[0;33m     83733 ns      83435 ns [m[0;36m      8064[m
+[m[0;32mBM_UnorderedMapLookup/2048 [m[0;33m    171655 ns     171161 ns [m[0;36m      4402[m
+[m[0;32mBM_SortedVectorLookup/16   [m[0;33m      3648 ns       3628 ns [m[0;36m    197367[m
+[m[0;32mBM_SortedVectorLookup/32   [m[0;33m      3544 ns       3520 ns [m[0;36m    207993[m
+[m[0;32mBM_SortedVectorLookup/64   [m[0;33m      4035 ns       3984 ns [m[0;36m    179062[m
+[m[0;32mBM_SortedVectorLookup/128  [m[0;33m      5233 ns       5165 ns [m[0;36m    100000[m
+[m[0;32mBM_SortedVectorLookup/256  [m[0;33m     10389 ns      10273 ns [m[0;36m     71240[m
+[m[0;32mBM_SortedVectorLookup/512  [m[0;33m     29784 ns      29588 ns [m[0;36m     23573[m
+[m[0;32mBM_SortedVectorLookup/1024 [m[0;33m     63971 ns      63774 ns [m[0;36m     11100[m
+[m[0;32mBM_SortedVectorLookup/2048 [m[0;33m    128992 ns     128485 ns [m[0;36m      5587[m
+[m
