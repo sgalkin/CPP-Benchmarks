@@ -14,7 +14,7 @@ SRCS = \
 	sorted_vector.cpp \
 
 all: ${SRCS:.cpp=}
-	for p in $^; do ./$$p; done
+	for p in $^; do ./$$p --benchmark_out=$$p.txt --benchmark_out_format=csv; done
 
 clean:
 	@-rm ${SRCS:.cpp=}
