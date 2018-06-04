@@ -1,4 +1,5 @@
 #include <benchmark/benchmark.h>
+
 #include <unordered_map>
 #include <vector>
 #include <array>
@@ -11,7 +12,7 @@ struct Data {
   std::array<uint8_t, 256> payload;
   uint64_t id;
 };
-    
+
 inline std::pair<uint64_t, Data> MapData(uint64_t id) {
   return std::make_pair(id, Data(id));
 }
@@ -78,7 +79,7 @@ void BM_SortedVectorDelete(benchmark::State& state) {
       data.insert(std::lower_bound(begin(data), end(data), d, cmp), std::move(d));
     }
     state.ResumeTiming();
-    
+
     for (size_t i = 0; i < elements; ++i) {
       Data d(i);
       auto it = std::lower_bound(begin(data), end(data), d, cmp);
@@ -104,6 +105,7 @@ void BM_UnorderedMapLookup(benchmark::State& state) {
     for (size_t i = 0; i < elements; ++i)
       d = &data.at(i);
   }
+  d += sizeof(d);
 }
 BENCHMARK(BM_UnorderedMapLookup)->RangeMultiplier(2)->Range(2<<3, 2<<10);
 
@@ -115,21 +117,22 @@ void BM_SortedVectorLookup(benchmark::State& state) {
     state.PauseTiming();
     std::vector<Data> data;
     for (size_t i = 0; i < elements; ++i) {
-      auto d = VectorData(i);
-      data.insert(std::lower_bound(begin(data), end(data), d, cmp), std::move(d));
+      auto x = VectorData(i);
+      data.insert(std::lower_bound(begin(data), end(data), x, cmp), std::move(x));
     }
     state.ResumeTiming();
-    
+
     for (size_t i = 0; i < elements; ++i) {
       Data l(i);
       auto it = std::lower_bound(begin(data), end(data), l, cmp);
       if(it != end(data) && it->id == i + 1)
         d = &(*it);
     }
+    d += sizeof(d);
   }
 }
 BENCHMARK(BM_SortedVectorLookup)->RangeMultiplier(2)->Range(2<<3, 2<<10);
-  
+
 }
 
 BENCHMARK_MAIN();
