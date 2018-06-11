@@ -51,6 +51,22 @@ void BM_SortedVectorInsert(benchmark::State& state) {
 }
 BENCHMARK(BM_SortedVectorInsert)->RangeMultiplier(2)->Range(2<<3, 2<<10);
 
+void BM_PushBackAndSort(benchmark::State& state) {
+  size_t elements = state.range(0);
+  auto cmp = [](const Data& lhs, const Data& rhs) { return lhs.id < rhs.id; };
+  for(auto _: state) {
+    state.PauseTiming();
+    std::vector<Data> data;
+    state.ResumeTiming();
+
+    for (size_t i = 0; i < elements; ++i) {
+      data.emplace_back(i);
+      std::sort(begin(data), end(data), cmp);
+    }
+  }
+}
+BENCHMARK(BM_PushBackAndSort)->RangeMultiplier(2)->Range(2<<3, 2<<10);
+
 
 // Delete
 void BM_UnorderedMapDelete(benchmark::State& state) {
