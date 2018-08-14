@@ -1,0 +1,19 @@
+2018-08-14 22:33:16
+Running ./erase
+Run on (8 X 3900 MHz CPU s)
+CPU Caches:
+  L1 Data 32K (x4)
+  L1 Instruction 32K (x4)
+  L2 Unified 256K (x4)
+  L3 Unified 8192K (x1)
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"BM_EraseRemove/32768",13113,52405.4,52383.8,ns,,,,,
+"BM_EraseRemove/65536",7401,95909.9,95945.4,ns,,,,,
+"BM_EraseRemove/131072",3615,193273,193293,ns,,,,,
+"BM_EraseRemove/262144",1790,389669,389681,ns,,,,,
+"BM_EraseRemove/524288",890,790737,790639,ns,,,,,
+"BM_ReserveEmplace/32768",10482,66945.1,66913.8,ns,,,,,
+"BM_ReserveEmplace/65536",5243,134081,134049,ns,,,,,
+"BM_ReserveEmplace/131072",2630,266760,266705,ns,,,,,
+"BM_ReserveEmplace/262144",1291,534471,534385,ns,,,,,
+"BM_ReserveEmplace/524288",490,1.43587e+06,1.43577e+06,ns,,,,,

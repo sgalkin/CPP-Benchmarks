@@ -1,12 +1,11 @@
-2018-06-04 09:26:23
+2018-08-14 22:33:14
 Running ./iostream
-Run on (8 X 3600 MHz CPU s)
+Run on (8 X 3900 MHz CPU s)
 CPU Caches:
   L1 Data 32K (x4)
   L1 Instruction 32K (x4)
   L2 Unified 256K (x4)
   L3 Unified 8192K (x1)
-***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"BM_EndLine",65856704,9.74121,9.73118,ns,,,,,
-"BM_NewLine",48809210,15.3406,15.3264,ns,,,,,
+"BM_EndLine",23224948,29.5324,29.5307,ns,,,,,
+"BM_NewLine",38140656,18.8033,18.8021,ns,,,,,

@@ -106,6 +106,31 @@ void BM_SortedVectorDelete(benchmark::State& state) {
 }
 BENCHMARK(BM_SortedVectorDelete)->RangeMultiplier(2)->Range(2<<3, 2<<10);
 
+void BM_SortedVectorSwapAndSort(benchmark::State& state) {
+  size_t elements = state.range(0);
+  auto cmp = [](const Data& lhs, const Data& rhs) { return lhs.id < rhs.id; };
+  for(auto _: state) {
+    state.PauseTiming();
+    std::vector<Data> data;
+    for (size_t i = 0; i < elements; ++i) {
+      auto d = VectorData(i);
+      data.insert(std::lower_bound(begin(data), end(data), d, cmp), std::move(d));
+    }
+    state.ResumeTiming();
+
+    for (size_t i = 0; i < elements; ++i) {
+      Data d(i);
+      auto it = std::lower_bound(begin(data), end(data), d, cmp);
+      if(it != end(data) && it->id == i + 1) {
+          std::swap(*it, *(data.end() - 1));
+          data.pop_back();
+          sort(begin(data), end(data), cmp);
+      }
+    }
+  }
+}
+BENCHMARK(BM_SortedVectorSwapAndSort)->RangeMultiplier(2)->Range(2<<3, 2<<10);
+
 
 // Lookup
 void BM_UnorderedMapLookup(benchmark::State& state) {
