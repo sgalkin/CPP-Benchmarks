@@ -17,6 +17,7 @@ SRCS = \
 	sorted_vector.cpp \
 	iostream.cpp \
 	erase.cpp \
+	loop.cpp \
 
 %: %.cpp
 	${LINK.cc} -o $@ $^ ${LDFLAGS}
